@@ -654,6 +654,9 @@ prefix operator ..<
 // "Coalescing"
 infix operator ?? : NilCoalescingPrecedence
 
+// "Unwrap-or-Die Coalescing"
+infix operator !! : NilCoalescingPrecedence
+
 // "Comparative"
 
 infix operator  <  : ComparisonPrecedence

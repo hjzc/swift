@@ -207,6 +207,15 @@ OptionalTests.test("??") {
   expectEqual(Optional(5), f ?? nextCounter2())
 }
 
+OptionalTests.test("!!") {    
+  let a: [Int] = [1, 2, 3]
+  let b: [Int] = []
+    
+  expectEqual(3, a.last !! "a is hardcoded to 3 items")
+  expectCrashLater()
+  _blackHole(b.last !! "b cannot be safely return a last item; this test should fail")
+}
+
 OptionalTests.test("flatMap") {
   let half: (Int32) -> Int16? =
     { if $0 % 2 == 0 { return Int16($0 / 2) } else { return .none } }
